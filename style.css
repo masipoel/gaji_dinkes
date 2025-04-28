@@ -1,0 +1,152 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 40px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+form input, form select, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.form-row input {
+  width: 48%;
+}
+
+#multiPotonganContainer {
+  margin-bottom: 10px;
+}
+
+#multiPotonganContainer button {
+  margin-top: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+table th, table td {
+  border: 2px solid #000;
+  padding: 8px;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #eef;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2196F3;
+  color: white;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #1976d2;
+}
+
+.ttd-section {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ttd-section div {
+  text-align: center;
+  width: 45%;
+}
+
+/* Dark Mode */
+.dark-mode body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .container {
+  background: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.dark-mode table th,
+.dark-mode table td {
+  border-color: #555;
+  background-color: #2c2c2c;
+  color: #eee;
+}
+
+.dark-mode table tr:nth-child(even) {
+  background-color: #252525;
+}
+
+.dark-mode table tr:hover {
+  background-color: #333;
+}
+
+.dark-mode .buttons button {
+  background-color: #333;
+  color: #eee;
+}
+
+.dark-mode .buttons button:hover {
+  background-color: #555;
+}
+
+.dark-mode .ttd-section div {
+  color: #eee;
+}
+
+.dark-mode input, .dark-mode select, .dark-mode button {
+  background-color: #2c2c2c;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.dark-mode .dark-mode-toggle {
+  background: #222;
+  color: #eee;
+}
+
+.dark-mode-toggle {
+  text-align: right;
+  margin-bottom: 10px;
+}
+...

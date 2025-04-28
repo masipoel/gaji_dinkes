@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Gaji ASN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dark-mode-toggle no-print">
+  <label>
+    <input type="checkbox" id="darkModeSwitch" />
+    🌙 Dark Mode
+  </label>
+</div>
+<div class="container">
+  <h1 id="judulCetak">DAFTAR BAYAR GAJI ASN</h1>
+  <h2>Input Data Pegawai</h2>
+  <form id="formPegawai">
+    <input id="nama" autocomplete="off" placeholder="Nama" required type="text" />
+    <input id="nomorRekening" autocomplete="off" placeholder="Nomor Rekening Bank" required type="text" />
+    <select id="golongan" required></select>
+    <select id="unitKerja" required></select>
+    <select id="gajiBulan" required></select>
+    <select id="tahunGaji" required></select>
+    <input id="gaji" autocomplete="off" placeholder="Gaji Dibayarkan" required type="text" />
+    <div class="form-row">
+      <input id="beras" autocomplete="off" placeholder="Jatah Beras (kg)" required type="number" />
+      <input disabled id="potonganAngkut" placeholder="Potongan Angkut Beras" type="text" />
+    </div>
+    <div id="multiPotonganContainer">
+      <label>Potongan Kredit dan Bank:</label>
+      <div id="potonganList"></div>
+      <button onclick="tambahPotonganField()" type="button">+ Tambah Potongan Kredit</button>
+    </div>
+    <button type="submit">Simpan</button>
+  </form>
+
+  <label for="filterUnitKerja"><strong>Filter Unit Kerja:</strong></label>
+  <select id="filterUnitKerja" autocomplete="off">
+    <option value="">-- Semua Unit Kerja --</option>
+  </select>
+
+  <div id="periodeGajiCetak"></div>
+
+  <table id="tabelGaji">
+    <thead>
+      <tr>
+        <th>No</th><th>Nama</th><th>Nomor Rekening Bank</th><th>Golongan</th><th>Unit Kerja</th>
+        <th>Gaji Dibayarkan</th><th>Beras (kg)</th><th>Potongan Angkut</th>
+        <th>Potongan Kredit</th><th>Total Potongan</th><th>Gaji Bersih</th><th class="no-print">Aksi</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="buttons no-print">
+    <button onclick="window.print()">Cetak</button>
+    <button onclick="backupDatabase()">Backup Database</button>
+    <input type="file" id="restoreInput" accept=".json" onchange="restoreDatabase(event)" style="display:none;" />
+    <button onclick="document.getElementById('restoreInput').click()">Restore Database</button>
+  </div>
+
+  <div class="ttd-section">
+    <div>Mengetahui,<br/>Kepala Dinas Kesehatan<br/><br/><br/><br/>___________________</div>
+    <div>Manokwari, ......................<br/>Bendahara<br/><br/><br/><br/>___________________</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
